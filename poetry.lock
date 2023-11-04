@@ -30,6 +30,44 @@ argon2 = ["argon2-cffi (>=19.1.0)"]
 bcrypt = ["bcrypt"]
 
 [[package]]
+name = "ftfy"
+version = "6.1.1"
+description = "Fixes mojibake and other problems with Unicode, after the fact"
+category = "main"
+optional = false
+python-versions = ">=3.7,<4"
+
+[package.dependencies]
+wcwidth = ">=0.2.5"
+
+[[package]]
+name = "langcodes"
+version = "3.3.0"
+description = "Tools for labeling human languages with IETF language tags"
+category = "main"
+optional = false
+python-versions = ">=3.6"
+
+[package.extras]
+data = ["language-data (>=1.1,<2.0)"]
+
+[[package]]
+name = "msgpack"
+version = "1.0.7"
+description = "MessagePack serializer"
+category = "main"
+optional = false
+python-versions = ">=3.8"
+
+[[package]]
+name = "regex"
+version = "2023.10.3"
+description = "Alternative regular expression module, to replace re."
+category = "main"
+optional = false
+python-versions = ">=3.7"
+
+[[package]]
 name = "sqlparse"
 version = "0.4.4"
 description = "A non-validating SQL parser."
@@ -58,14 +96,47 @@ category = "main"
 optional = false
 python-versions = ">=2"
 
+[[package]]
+name = "wcwidth"
+version = "0.2.9"
+description = "Measures the displayed width of unicode strings in a terminal"
+category = "main"
+optional = false
+python-versions = "*"
+
+[[package]]
+name = "wordfreq"
+version = "3.0.3"
+description = "Look up the frequencies of words in many languages, based on many sources of data."
+category = "main"
+optional = false
+python-versions = ">=3.7,<4.0"
+
+[package.dependencies]
+ftfy = ">=6.1"
+langcodes = ">=3.0"
+msgpack = ">=1.0"
+regex = ">=2021.7.6"
+
+[package.extras]
+cjk = ["mecab-python3 (>=1.0.5,<2.0.0)", "ipadic (>=1.0.0,<2.0.0)", "mecab-ko-dic (>=1.0.0,<2.0.0)", "jieba (>=0.42)"]
+mecab = ["mecab-python3 (>=1.0.5,<2.0.0)", "ipadic (>=1.0.0,<2.0.0)", "mecab-ko-dic (>=1.0.0,<2.0.0)"]
+jieba = ["jieba (>=0.42)"]
+
 [metadata]
 lock-version = "1.1"
 python-versions = "^3.10"
-content-hash = "28a68c2f6e4236c09388d443d28616031d2296809cd36e7cc93badb4f7ade326"
+content-hash = "957e525c330b511e7ef4412a324e72f356fea1ab8939eb40f0e33a9f7f5501c0"
 
 [metadata.files]
 asgiref = []
 django = []
+ftfy = []
+langcodes = []
+msgpack = []
+regex = []
 sqlparse = []
 typing-extensions = []
 tzdata = []
+wcwidth = []
+wordfreq = []

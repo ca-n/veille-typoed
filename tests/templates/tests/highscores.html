@@ -1,0 +1,30 @@
+<h1>Highscores</h1>
+
+<table>
+    <tr>
+        <th>#</th>
+        <th>Username</th>
+        <th>WPM</th>
+        <th>Accuracy</th>
+        <th>Language</th>
+        <th>Date</th>
+    </tr>
+{% for test in object_list %}
+    <tr>
+        <td>{{ forloop.counter }}</td>
+        <td>{{ test.user }}</td>
+        <td>{{ test.wpm }}</td>
+        <td>{{ test.accuracy }}</td>
+        <td>{{ test.lang }}</td>
+        <td>{{ test.date }}</td>
+    </tr>
+{% endfor %}
+</table>
+
+
+{% for test in object_list %}
+    <li>{{ test }}</li>
+{% empty %}
+    <li>No highscores yet.</li>
+{% endfor %}
+</ol>
