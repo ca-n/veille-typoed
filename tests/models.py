@@ -20,8 +20,8 @@ class Word(models.Model):
 class Test(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     lang = models.ForeignKey(Lang, on_delete=models.CASCADE)
-    wpm = models.DecimalField(max_digits=5, decimal_places=2)
-    accuracy = models.DecimalField(max_digits=4, decimal_places=3)
+    wpm = models.IntegerField()
+    accuracy = models.DecimalField(max_digits=4, decimal_places=1)
     date = models.DateField()
 
     def __str__(self):
