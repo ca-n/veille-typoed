@@ -13,6 +13,21 @@ typing-extensions = {version = ">=4", markers = "python_version < \"3.11\""}
 tests = ["pytest", "pytest-asyncio", "mypy (>=0.800)"]
 
 [[package]]
+name = "beautifulsoup4"
+version = "4.12.2"
+description = "Screen-scraping library"
+category = "main"
+optional = false
+python-versions = ">=3.6.0"
+
+[package.dependencies]
+soupsieve = ">1.2"
+
+[package.extras]
+html5lib = ["html5lib"]
+lxml = ["lxml"]
+
+[[package]]
 name = "django"
 version = "4.2.6"
 description = "A high-level Python web framework that encourages rapid development and clean, pragmatic design."
@@ -28,6 +43,21 @@ tzdata = {version = "*", markers = "sys_platform == \"win32\""}
 [package.extras]
 argon2 = ["argon2-cffi (>=19.1.0)"]
 bcrypt = ["bcrypt"]
+
+[[package]]
+name = "django-bootstrap-v5"
+version = "1.0.11"
+description = "Bootstrap 5 support for Django projects"
+category = "main"
+optional = false
+python-versions = ">=3.6,<4.0"
+
+[package.dependencies]
+beautifulsoup4 = ">=4.8.0,<5.0.0"
+django = ">=2.2,<5.0"
+
+[package.extras]
+docs = ["sphinx (>=4.4,<5.0)", "sphinx_rtd_theme (>=1.0,<2.0)", "m2r2 (>=0.2.5,<0.3.0)"]
 
 [[package]]
 name = "ftfy"
@@ -66,6 +96,14 @@ description = "Alternative regular expression module, to replace re."
 category = "main"
 optional = false
 python-versions = ">=3.7"
+
+[[package]]
+name = "soupsieve"
+version = "2.5"
+description = "A modern CSS selector implementation for Beautiful Soup."
+category = "main"
+optional = false
+python-versions = ">=3.8"
 
 [[package]]
 name = "sqlparse"
@@ -126,15 +164,18 @@ jieba = ["jieba (>=0.42)"]
 [metadata]
 lock-version = "1.1"
 python-versions = "^3.10"
-content-hash = "957e525c330b511e7ef4412a324e72f356fea1ab8939eb40f0e33a9f7f5501c0"
+content-hash = "e58149e560d8e0991fd8c8720044bfb6d40c423d2778c49deb55d7046e56fade"
 
 [metadata.files]
 asgiref = []
+beautifulsoup4 = []
 django = []
+django-bootstrap-v5 = []
 ftfy = []
 langcodes = []
 msgpack = []
 regex = []
+soupsieve = []
 sqlparse = []
 typing-extensions = []
 tzdata = []

@@ -1,0 +1,21 @@
+{% extends "master.html" %}
+{% load static %}
+{% block title %}Test{% endblock %}
+{% block content %}
+<script>var wordList = {{ word_list|safe }};</script>
+<script src="{% static 'tests/test.js' %}"></script>
+<div class="container text-center">
+    <h1>Typing Test</h1>
+    <p id="timer">Begin typing to start the timer.</p>
+</div>
+<div id="words" class="row row-cols-auto mx-auto" style="width: 800px">
+    {% for word in word_list %}
+    <div class="word row font-monospace">
+        {% for letter in word %}
+        <div class="letter text-muted col m-0 p-0">{{ letter }}</div>
+        {% endfor %}
+        <div class="letter text-muted col m-0 p-0">&nbsp;</div>
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}

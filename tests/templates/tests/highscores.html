@@ -1,30 +1,27 @@
-<h1>Highscores</h1>
-
-<table>
+{% extends "master.html" %}
+{% block title %}Highscores{% endblock %}
+{% block content %}
+<h1 class="text-center">Highscores{% if username %} for {{ username }}{% endif %}</h1>
+<table class="table table-striped table-hover">
     <tr>
         <th>#</th>
         <th>Username</th>
         <th>WPM</th>
         <th>Accuracy</th>
-        <th>Language</th>
         <th>Date</th>
     </tr>
-{% for test in object_list %}
+    {% for test in test_list %}
     <tr>
         <td>{{ forloop.counter }}</td>
-        <td>{{ test.user }}</td>
+        <td>{{ test.username }}</td>
         <td>{{ test.wpm }}</td>
         <td>{{ test.accuracy }} %</td>
-        <td>{{ test.lang }}</td>
         <td>{{ test.date }}</td>
     </tr>
-{% endfor %}
+    {% empty %}
+    <tr>
+        <td colspan="5">No highscores yet.</td>
+    </tr>
+    {% endfor %}
 </table>
-
-
-{% for test in object_list %}
-    <li>{{ test }}</li>
-{% empty %}
-    <li>No highscores yet.</li>
-{% endfor %}
-</ol>
+{% endblock %}

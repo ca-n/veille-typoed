@@ -1,0 +1,23 @@
+{% extends "master.html" %}
+{% block title %}{{ user.username }}{% endblock %}
+{% block content %}
+<h1 class="text-center">{{ user.username }}</h1>
+<table class="table table-striped">
+    <tr>
+        <th>WPM</th>
+        <th>Accuracy</th>
+        <th>Date</th>
+    </tr>
+{% for test in user.tests %}
+    <tr>
+        <td>{{ test.wpm }}</td>
+        <td>{{ test.accuracy }} %</td>
+        <td>{{ test.date }}</td>
+    </tr>
+{% empty %}
+    <tr>
+        <td colspan="3">No tests done yet.</td>
+    </tr>
+{% endfor %}
+</table>
+{% endblock %}
